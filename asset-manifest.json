@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/react-demo-with-github-actions/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/react-demo-with-github-actions/static/js/main.1f38b57c.chunk.js",
-    "main.js.map": "/react-demo-with-github-actions/static/js/main.1f38b57c.chunk.js.map",
+    "main.css": "/react-demo-with-github-actions/static/css/main.825b3d1a.chunk.css",
+    "main.js": "/react-demo-with-github-actions/static/js/main.7823c327.chunk.js",
+    "main.js.map": "/react-demo-with-github-actions/static/js/main.7823c327.chunk.js.map",
     "runtime-main.js": "/react-demo-with-github-actions/static/js/runtime-main.12beddd7.js",
     "runtime-main.js.map": "/react-demo-with-github-actions/static/js/runtime-main.12beddd7.js.map",
     "static/js/2.8435a515.chunk.js": "/react-demo-with-github-actions/static/js/2.8435a515.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.ca4ef390.chunk.js": "/react-demo-with-github-actions/static/js/3.ca4ef390.chunk.js",
     "static/js/3.ca4ef390.chunk.js.map": "/react-demo-with-github-actions/static/js/3.ca4ef390.chunk.js.map",
     "index.html": "/react-demo-with-github-actions/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/react-demo-with-github-actions/static/css/main.8c8b27cf.chunk.css.map",
+    "static/css/main.825b3d1a.chunk.css.map": "/react-demo-with-github-actions/static/css/main.825b3d1a.chunk.css.map",
     "static/js/2.8435a515.chunk.js.LICENSE.txt": "/react-demo-with-github-actions/static/js/2.8435a515.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/react-demo-with-github-actions/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.12beddd7.js",
     "static/js/2.8435a515.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.1f38b57c.chunk.js"
+    "static/css/main.825b3d1a.chunk.css",
+    "static/js/main.7823c327.chunk.js"
   ]
 }
