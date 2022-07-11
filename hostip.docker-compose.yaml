@@ -17,4 +17,4 @@ services:
 networks:
   default:
     external:
-      name: traefik_default
+      name: deploy_traefik_1
