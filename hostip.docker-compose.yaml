@@ -6,7 +6,7 @@ services:
       dockerfile: cra.Dockerfile
     labels:
       # 配置域名 
-      # 域名为申请通过，使用服务器公网 ip
+      # 域名未申请通过，使用服务器公网 ip
        - "traefik.http.routers.cra.rule=Host(`47.106.80.92`)"
 
        # 配置 TLS
