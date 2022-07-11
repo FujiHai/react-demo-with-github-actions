@@ -1,0 +1,20 @@
+version: "3"
+services:
+  domain:
+    build:
+      context: .
+      dockerfile: cra.Dockerfile
+    labels:
+      # 配置域名 
+      # 域名为申请通过，使用服务器公网 ip
+       - "traefik.http.routers.cra.rule=Host(`47.106.80.92`)"
+
+       # 配置 TLS
+       - traefik.http.routers.cra.tls=true
+       - traefik.http.routers.cra.tls.certresolver=le
+
+# 一定要与 traefik 在同一网络下
+networks:
+  default:
+    external:
+      name: traefik_default

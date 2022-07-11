@@ -1,37 +1,57 @@
-name: Build & deploy react-demo-with-github-actions
+# 旧版部署 yml - 使用 github 自己的 runner
+# name: Build & deploy react-demo-with-github-actions
+
+# on:
+#   push:
+#     branches: [master]
+#   pull_request:
+#     branches: [master]
+
+# jobs:
+#   build:
+#     name: Build
+#     runs-on: ubuntu-latest
+
+#     strategy:
+#       matrix:
+#         node-version: [12.x]
+
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+
+#       - name: Use Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: ${{ matrix.node-version }}
+
+#       - name: Install packages with yarn
+#         run: rm -rf node_modules && yarn install --frozen-lockfile
+
+#       - name: Build and deploy with gh-pages
+#         run: |
+#           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+#           npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+#           GITHUB_REPOSITORY: react-demo-with-github-actions
+      
+
+# 新版部署 yml，使用自建 runner
+name: react-actions-demo
 
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+    branches:    
+      - master
 
 jobs:
-  build:
-    name: Build
+  deploy:
     runs-on: self-hosted
-
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install packages with yarn
-        run: rm -rf node_modules && yarn install --frozen-lockfile
-
-      - name: Build and deploy with gh-pages
-        run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+      # 切出代码，使用该 Action 将可以拉取最新代码
+      - uses: actions/checkout@v2
+      - name: Deploy
+        run: docker-compose -f domain.docker-compose.yaml up --build -d domain
         env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          GITHUB_REPOSITORY: react-demo-with-github-actions
-      
+          COMMIT_REF_NAME: ${{ github.ref_name }}
