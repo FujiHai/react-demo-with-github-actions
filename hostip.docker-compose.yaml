@@ -10,8 +10,8 @@ services:
        - "traefik.http.routers.cra.rule=Host(`47.106.80.92`)"
 
        # 配置 TLS
-       - traefik.http.routers.cra.tls=true
-       - traefik.http.routers.cra.tls.certresolver=le
+       # - traefik.http.routers.cra.tls=true
+       # - traefik.http.routers.cra.tls.certresolver=le
 
 # 一定要与 traefik 在同一网络下
 networks:
